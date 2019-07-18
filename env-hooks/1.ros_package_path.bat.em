@@ -28,7 +28,8 @@ endlocal
 setlocal EnableDelayedExpansion
 
 set ROS_PACKAGE_PATH_PARENTS=
-for /f %%a in ('@(PYTHON_EXECUTABLE) _parent_package_path.py') do set ROS_PACKAGE_PATH_PARENTS=!ROS_PACKAGE_PATH_PARENTS!%%a
+rem for /f %%a in ('@(PYTHON_EXECUTABLE) _parent_package_path.py') do set ROS_PACKAGE_PATH_PARENTS=!ROS_PACKAGE_PATH_PARENTS!%%a
+for /f %%a in ('%PYTHON_EXE% _parent_package_path.py') do set ROS_PACKAGE_PATH_PARENTS=!ROS_PACKAGE_PATH_PARENTS!%%a
 
 set ROS_PACKAGE_PATH=%ROS_PACKAGE_PATH_PARENTS%
 
